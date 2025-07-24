@@ -6,7 +6,7 @@
 public enum AuthType
 {
     Email,
-    Phone,
+    PhoneNumber,
     VK,
     Yandex
 }
