@@ -89,7 +89,14 @@ public class User : IdentityUser<Guid>
     /// Дата рождения
     /// </summary>
     public DateTime? Birthday { get; set; }
+    /// <summary>
+    /// Причина блокировки
+    /// </summary>
     public string? LockoutReason { get; set; }
+    /// <summary>
+    /// Язык отображения
+    /// </summary>
+    public Language Language { get; set; }
     
     /// <summary>
     /// Устройства пользователя

@@ -8,10 +8,10 @@ public static class NatsConstants
     /// <summary>
     /// Авторизация пользователя
     /// </summary>
-    public const string LoggedInTopic = "LoggedIn";
+    public const string LoggedInTopic = ".LoggedIn";
     
     /// <summary>
     /// Блокировка пользователя
     /// </summary>
-    public const string LockedOutTopic = "LockedOut";
+    public const string LockedOutTopic = ".LockedOut";
 }
