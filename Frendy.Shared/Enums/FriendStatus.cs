@@ -8,13 +8,13 @@ public enum FriendQueryStatus
     /// <summary>
     /// Запрос был отправлен
     /// </summary>
-    Sent,
+    Sent = 1,
     /// <summary>
     /// Запрос был принят
     /// </summary>
-    Accepted,
+    Accepted = 2,
     /// <summary>
     /// Запрос был отклонён
     /// </summary>
-    Rejected
+    Rejected = 3
 }

@@ -5,6 +5,13 @@
 /// </summary>
 public enum ValidationStatus
 {
-    Success,
-    Error
+    /// <summary>
+    /// Успешная валидация
+    /// </summary>
+    Success = 1,
+    
+    /// <summary>
+    /// Валидация с ошибками
+    /// </summary>
+    Error = 2
 }

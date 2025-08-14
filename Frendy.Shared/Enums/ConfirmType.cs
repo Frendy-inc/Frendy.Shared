@@ -8,9 +8,10 @@ public enum ConfirmType
     /// <summary>
     /// Сброс пароля
     /// </summary>
-    PassReset,
+    PassReset = 1,
+    
     /// <summary>
     /// Регистрация
     /// </summary>
-    Registration
+    Registration = 2
 }

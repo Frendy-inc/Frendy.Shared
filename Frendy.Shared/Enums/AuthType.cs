@@ -5,8 +5,23 @@
 /// </summary>
 public enum AuthType
 {
-    Email,
-    PhoneNumber,
-    VK,
-    Yandex
+    /// <summary>
+    /// Email
+    /// </summary>
+    Email = 1,
+    
+    /// <summary>
+    /// Номер телефона
+    /// </summary>
+    PhoneNumber = 2,
+    
+    /// <summary>
+    /// Вк (ВКонтакте)
+    /// </summary>
+    Vk = 3,
+    
+    /// <summary>
+    /// Яндекс
+    /// </summary>
+    Yandex = 4
 }

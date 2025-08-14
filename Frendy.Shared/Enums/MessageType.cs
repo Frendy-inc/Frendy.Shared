@@ -8,21 +8,21 @@ public enum MessageType
     /// <summary>
     /// Текстовое сообщение
     /// </summary>
-    Text,
+    Text = 1,
     /// <summary>
     /// Изображение
     /// </summary>
-    Image, 
+    Image = 2, 
     /// <summary>
     /// Видео
     /// </summary>
-    Video,
+    Video = 3,
     /// <summary>
     /// Документ
     /// </summary>
-    Document,
+    Document = 4,
     /// <summary>
     /// Стикер
     /// </summary>
-    Sticker
+    Sticker = 5
 }

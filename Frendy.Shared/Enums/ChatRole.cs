@@ -8,9 +8,9 @@ public enum ChatRole
     /// <summary>
     /// Владелец
     /// </summary>
-    Owner,
+    Owner = 1,
     /// <summary>
     /// Участник
     /// </summary>
-    Member
+    Member = 2
 }
