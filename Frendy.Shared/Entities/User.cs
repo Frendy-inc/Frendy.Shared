@@ -202,4 +202,9 @@ public class User : IdentityUser<Guid>
     /// Список промежуточных объектов наборов стикеров, доступных пользователю
     /// </summary>
     public List<UserStickerSet> UserStickerSets { get; set; } = new();
+    
+    /// <summary>
+    /// Список аудитов, совершённых пользователем
+    /// </summary>
+    public List<Audit> Audits { get; set; } = new();
 }
