@@ -1,4 +1,7 @@
-﻿namespace Frendy.Shared.Extensions;
+﻿using Frendy.Shared.Dto.ResponseDto.UserResponseDto;
+using Frendy.Shared.Entities;
+
+namespace Frendy.Shared.Extensions;
 
 /// <summary>
 /// Расширения конвертации
@@ -16,5 +19,30 @@ public static class ConvertExtension
     {
         var enumName = Enum.GetName(typeof(T), inputEnum);
         return enumName ?? throw new ArgumentException($"The value '{inputEnum}' not found in enum '{nameof(T)}'");
+    }
+    
+    /// <summary>
+    /// Конвертировать <see cref="User"/> в <see cref="GetUserInfoResponseLookup"/>
+    /// </summary>
+    /// <param name="user">Пользователь для конвертации</param>
+    /// <returns><see cref="GetUserInfoResponseLookup"/></returns>
+    public static GetUserInfoResponseLookup ToLookup(this User user)
+    {
+        return new GetUserInfoResponseLookup
+        {
+            Id = user.Id,
+            FullName = user.FullName,
+            FirstName = user.FirstName,
+            LastName = user.LastName,
+            Email = user.Email,
+            PhoneNumber = user.PhoneNumber,
+            AvatarUrl = user.AvatarUrl,
+            Birthday = user.Birthday,
+            Role = user.Role,
+            EmailConfirmed = user.EmailConfirmed,
+            PhoneConfirmed = user.PhoneNumberConfirmed,
+            IsLockedOut = user.LockoutEnabled,
+            LockoutReason = user.LockoutReason
+        };
     }
 }
