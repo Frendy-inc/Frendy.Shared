@@ -3,7 +3,7 @@ namespace Frendy.Shared.Entities;
 /// <summary>
 /// Класс действия аудита
 /// </summary>
-public class AuditAction
+public class Action
 {
     /// <summary>
     /// Идентификатор действия аудита
@@ -19,4 +19,9 @@ public class AuditAction
     /// Название действия на английском языке
     /// </summary>
     public string NameEn { get; set; } = null!;
+    
+    /// <summary>
+    /// Список аудитов
+    /// </summary>
+    public List<Audit>? Audits { get; set; }
 }

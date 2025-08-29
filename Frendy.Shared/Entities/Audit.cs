@@ -51,4 +51,9 @@ public class Audit
     /// Класс цели аудита
     /// </summary>
     public User Target { get; set; } = null!;
+    
+    /// <summary>
+    /// Класс действия аудита
+    /// </summary>
+    public Action Action { get; set; } = null!;
 }

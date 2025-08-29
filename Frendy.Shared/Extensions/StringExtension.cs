@@ -51,9 +51,7 @@ public static class StringExtension
     /// <exception cref="ArgumentException">Если не удалось конвертировать</exception>
     public static int ToInt(this string value)
     {
-        if (!int.TryParse(value, out var result))
-            throw new ArgumentException($"Failed to convert string '{value}' to int");
-        return result;
+        return !int.TryParse(value, out var result) ? 0 : result;
     }
 
     /// <summary>
@@ -64,8 +62,6 @@ public static class StringExtension
     /// <exception cref="ArgumentException">Если не удалось конвертировать</exception>
     public static bool ToBoolean(this string value)
     {
-        if (!bool.TryParse(value, out var result))
-            throw new ArgumentException($"Failed to convert string '{value}' to bool");
-        return result;
+        return bool.TryParse(value, out var result) && result;
     }
 }
