@@ -25,12 +25,17 @@ public class GetAuditsRequestDto
     /// <summary>
     /// Фильтр по дате/времени: от (UTC, включительно)
     /// </summary>
-    public DateTime? From { get; set; }
+    public DateTime? FromDate { get; set; }
 
     /// <summary>
     /// Фильтр по дате/времени: до (UTC, включительно)
     /// </summary>
-    public DateTime? To { get; set; }
+    public DateTime? ToDate { get; set; }
+    
+    /// <summary>
+    /// С какого элемента необходимо получить
+    /// </summary>
+    public int From { get; set; }
 
     /// <summary>
     /// Номер страницы (начиная с 1)
@@ -43,4 +48,10 @@ public class GetAuditsRequestDto
     /// </summary>
     [Range(1, 1000)]
     public int PageSize { get; set; } = 50;
+    
+    /// <summary>
+    /// Строка для поиска (опционально)
+    /// </summary>
+    [StringLength(255)]
+    public string? Search { get; set; } 
 }
