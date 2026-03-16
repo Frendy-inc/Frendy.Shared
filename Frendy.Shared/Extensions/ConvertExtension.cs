@@ -20,6 +20,17 @@ public static class ConvertExtension
         var enumName = Enum.GetName(typeof(T), inputEnum);
         return enumName ?? throw new ArgumentException($"The value '{inputEnum}' not found in enum '{nameof(T)}'");
     }
+
+    /// <summary>
+    /// Получить дату в виде строки
+    /// </summary>
+    /// <param name="inputDate">Дата, которую нужно конвертировать</param>
+    /// <param name="withTime">Нужно ли включить время в результат</param>
+    /// <returns>Конвертированное в строку время</returns>
+    public static string GetStringDate(this DateTime inputDate, bool withTime = false)
+    {
+        return inputDate.ToString(withTime ? "dd.MM.yyyy hh:mm" : "dd.MM.yyyy");
+    }
     
     /// <summary>
     /// Конвертировать <see cref="User"/> в <see cref="GetUserInfoResponseLookup"/>

@@ -1,3 +1,6 @@
+using System.ComponentModel.DataAnnotations;
+using Frendy.Shared.Enums;
+
 namespace Frendy.Shared.Dto.RequestDto.UserRequestDto;
 
 /// <summary>
@@ -9,16 +12,6 @@ public class GetUsersRequestDto
     /// Если указан, вернётся один пользователь с данным Id
     /// </summary>
     public Guid? UserId { get; set; }
-
-    /// <summary>
-    /// Пагинация: номер страницы (начиная с 1)
-    /// </summary>
-    public int Page { get; set; } = 1;
-
-    /// <summary>
-    /// Пагинация: размер страницы
-    /// </summary>
-    public int PageSize { get; set; } = 20;
 
     /// <summary>
     /// Фильтр по дате регистрации: от
@@ -49,4 +42,42 @@ public class GetUsersRequestDto
     /// Фильтр по дате рождения: до
     /// </summary>
     public DateTime? BirthDateTo { get; set; }
+    
+    /// <summary>
+    /// Фильтр по статусу "Онлайн"
+    /// </summary>
+    public bool? IsOnline { get; set; }
+    
+    /// <summary>
+    /// Фильтр по статусу "Заблокирован"
+    /// </summary>
+    public bool? IsBanned { get; set; }
+    
+    /// <summary>
+    /// Фильтр по приоритетному типу авторизации
+    /// </summary>
+    public AuthType? AuthType { get; set; }
+    
+    /// <summary>
+    /// С какого элемента необходимо получить
+    /// </summary>
+    public int From { get; set; }
+
+    /// <summary>
+    /// Номер страницы (начиная с 1)
+    /// </summary>
+    [Range(1, int.MaxValue)]
+    public int Page { get; set; } = 1;
+
+    /// <summary>
+    /// Размер страницы
+    /// </summary>
+    [Range(1, 1000)]
+    public int PageSize { get; set; } = 50;
+    
+    /// <summary>
+    /// Строка для поиска (опционально)
+    /// </summary>
+    [StringLength(255)]
+    public string? Search { get; set; } 
 }
